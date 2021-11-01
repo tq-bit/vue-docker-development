@@ -1,31 +1,31 @@
 import { ref, computed } from 'vue';
 import uuid from '../use/uuid';
 
+import {
+  SET_ACTIVE_TODO,
+  ADD_TODO,
+  DELETE_TODO,
+  UPDATE_TODO,
+} from './todo.types.js';
+
 export default function useTodos() {
+  const commit = (type, payload) => {
+    return mutations[type](payload);
+  };
+
   const state = {
     todoList: ref([]),
     todoActive: ref({}),
   };
 
-  const actions = {
-    setActiveTodo: (payload) => {
-      mutations.SET_TODO_ACTIVE({ payload });
-    },
-    addTodoItem: (payload) => {
-      payload.id = uuid();
-      mutations.ADD_TODO({ payload });
-    },
-    deleteTodoItem: (id) => {
-      mutations.DELETE_TODO({ id });
-    },
-    updateTodoText: (payload) => {
-      mutations.UPDATE_TODO({ payload });
-    },
-    updateTodoDone: (id) => {
-      let todoItem = state.todoList.value.find((todo) => todo.id === id);
-      todoItem.done = !todoItem.done;
-      mutations.UPDATE_TODO({ payload: todoItem });
-    },
+  const getters = {
+    todoList: computed(() => state.todoList.value),
+    todoActive: computed(() => state.todoActive.value),
+    todoListSortedByDone: computed(() => {
+      return state.todoList.value.sort((current, next) => {
+        return current.done === next.done ? 0 : current.done ? 1 : -1;
+      });
+    }),
   };
 
   const mutations = {
@@ -49,16 +49,26 @@ export default function useTodos() {
     },
   };
 
-  const getters = {
-    todoList: computed(() => state.todoList.value),
+  const actions = {
+    setActiveTodo: (payload) => {
+      commit(SET_ACTIVE_TODO, { payload });
+    },
+    addTodoItem: (payload) => {
+      payload.id = uuid();
+      commit(ADD_TODO, { payload });
+    },
+    deleteTodoItem: (id) => {
+      commit(DELETE_TODO, { id });
+    },
+    updateTodoText: (payload) => {
+      commit(UPDATE_TODO, { payload });
+    },
+    updateTodoDone: (id) => {
+      let todoItem = state.todoList.value.find((todo) => todo.id === id);
+      todoItem.done = !todoItem.done;
 
-    todoActive: computed(() => state.todoActive.value),
-
-    todoListSortedByDone: computed(() => {
-      return state.todoList.value.sort((current, next) => {
-        return current.done === next.done ? 0 : current.done ? 1 : -1;
-      });
-    }),
+      commit(UPDATE_TODO, { payload: todoItem });
+    },
   };
 
   return { actions, getters };
