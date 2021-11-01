@@ -19,7 +19,7 @@ git clone https://github.com/tq-bit/vue-docker-development.git
 # Development version. Uses Vue CLI to serve the app during development
 docker build  \
     -f ./dockerfiles/Dev.Dockerfile \
-    -t vue_app:dev
+    -t vue_app:dev \
     vue_app
 
 # Deployable version. Uses the official Nginx to serve the Vue SPA
@@ -34,7 +34,7 @@ docker build \
 ```bash
 docker run \
     -v /path/to/project/vue_app:/vue_app \
-    -p 8080:8080
+    -p 8080:8080 \
     -it vue_app:dev
 ```
 
