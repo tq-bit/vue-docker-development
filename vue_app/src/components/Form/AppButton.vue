@@ -1,5 +1,6 @@
 <template>
   <button
+    v-ripple
     class="q-button-base"
     :id="id"
     :disabled="loading"
