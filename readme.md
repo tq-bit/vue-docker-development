@@ -13,6 +13,9 @@ It might as well serve as a boilerplate for smaller projects as it comes with a 
 git clone https://github.com/tq-bit/vue-docker-development.git
 ```
 
+> If you have not read the previous article, make sure to manually install all dependencies in your dev project
+> Run `cd vue_app && npm install && cd ..` before moving ahead
+
 3. Build the image you need for development or production
 
 ```bash
