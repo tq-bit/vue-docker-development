@@ -32,6 +32,7 @@ docker build \
 4. Start a container that serves the development version of your app
 
 ```bash
+# Open your browser at http://localhost:8080 to access the app
 docker run \
     -v /path/to/project/vue_app:/vue_app \
     -p 8080:8080 \
@@ -41,6 +42,7 @@ docker run \
 5. Or test the optimized built with Docker
 
 ```bash
+# Open your browser at http://localhost to access the app
 docker run -p 80:80 vue_app:production
 ```
 
