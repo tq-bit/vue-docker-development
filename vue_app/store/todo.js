@@ -14,7 +14,29 @@ export default function useTodos() {
   };
 
   const state = {
-    todoList: ref([]),
+    todoList: ref([
+      {
+        id: uuid(),
+        title: 'Learn Vue.js',
+        description:
+          'Learn the basic concepts, such as components, directives and reactivity.',
+        done: true,
+      },
+      {
+        id: uuid(),
+        title: 'Learn Docker 🐋',
+        description:
+          'Take the first step to get the basics of containerized applications',
+        done: true,
+      },
+      {
+        id: uuid(),
+        title: 'Vue + Docker = 🚀',
+        description:
+          'Learn how to create, manage, run and deploy a Vue app with Docker containers.',
+        done: false,
+      },
+    ]),
     todoActive: ref({}),
   };
 
