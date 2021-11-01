@@ -31,6 +31,11 @@ export default {
 <style>
 @import url("./assets/css/main.css");
 
+/* Globally valid styles */
+a {
+  color: var(--accent-color-primary);
+}
+
 .q-flex-center {
   display: flex;
   align-items: center;

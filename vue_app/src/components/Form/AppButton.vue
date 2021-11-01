@@ -98,7 +98,7 @@ export default {
 <style scoped>
 .q-button-base {
   border: none;
-  border-radius: var(--gap-xs);
+  border-radius: 0 var(--gap-sm) 0 var(--gap-sm);
   cursor: pointer;
   margin: var(--gap-sm) var(--gap-sm) var(--gap-sm) 0;
   text-align: center;
