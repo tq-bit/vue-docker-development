@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import vRipple from './directives/vRipple';
 
-createApp(App).mount('#app');
+createApp(App).directive('ripple', vRipple).mount('#app');
