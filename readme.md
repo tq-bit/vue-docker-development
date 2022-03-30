@@ -4,6 +4,8 @@ This repository is a deployable example for my article at https://blog.q-bit.me/
 
 It might as well serve as a boilerplate for smaller projects as it comes with a built-in store, powered by Vue 3's composition API.
 
+> Update: Check out [Chattergram](https://github.com/tq-bit/chattergram) for a full-stack approach to Vue 3 development
+
 ## Quickstart
 
 1. Make sure you have Docker installed. You can find a quick setup guide [in the official docs](https://docs.docker.com/engine/install/) or in my [previous blogpost](https://blog.q-bit.me/how-to-develop-and-deploy-a-vue-js-app-with-docker-part-one/#installing-docker).
