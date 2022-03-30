@@ -84,7 +84,7 @@ export default {
 
 <style scoped>
 .q-todo-form {
-  padding: var(--gap-xl) 0;
+  padding: var(--gap-max) 0;
 }
 
 @media (max-width: 768px) {

@@ -28,6 +28,7 @@
               href="https://blog.q-bit.me/how-to-develop-and-deploy-a-vue-js-app-with-docker-part-one/"
             >first article</a> before you jump straight into this one.
           </p>
+          <small>Made with 💚	and Vue.js</small>
         </section>
       </app-dropdown>
       <app-theme-button class="q-navbar-item"></app-theme-button>
