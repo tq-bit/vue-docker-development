@@ -4,7 +4,7 @@ services:
     build:
       dockerfile: dockerfiles/Dev.Dockerfile
     volumes:
-      - /home/tobiq/Development/dev_projects/vue-docker-development/vue_app:/vue_app
+      - <path-to-your-project>/vue_app:/vue_app
     ports:
       - "8080:8080"
   vue_app_prod:
