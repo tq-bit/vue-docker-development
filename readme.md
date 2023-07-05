@@ -18,7 +18,7 @@ git clone https://github.com/tq-bit/vue-docker-development.git
 > If you have not read the previous article, make sure to manually install all dependencies in your dev project
 > Run `cd vue_app && npm install && cd ..` before moving ahead
 
-3. Build the image you need for development or production
+3. Build the image you need for development or production OR start the service with `docker-compose`
 
 ```bash
 # Development version. Uses Vue CLI to serve the app during development
@@ -33,6 +33,12 @@ docker build \
     -t vue_app:production \
     vue_app
 ```
+
+3.1. Use docker compose like this (you can skip steps 4 and 5 if you do):
+
+```sh
+docker compose up     # Use docker's built-in compose function
+# docker-compose up   # Use the docker-compose binary
 
 4. Start a container that serves the development version of your app
 
