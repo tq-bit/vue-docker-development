@@ -1,9 +1,13 @@
 version: "3.8"
 services:
-  vue_app:
+  vue_app_dev:
     build:
       dockerfile: dockerfiles/Dev.Dockerfile
     volumes:
       - /home/tobiq/Development/dev_projects/vue-docker-development/vue_app:/vue_app
     ports:
       - "8080:8080"
+  vue_app_prod:
+    image: earthenlynx/vue_app:production
+    ports:
+      - "80:80"
